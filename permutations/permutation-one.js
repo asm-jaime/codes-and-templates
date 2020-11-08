@@ -1,6 +1,7 @@
 /* #onemutation #A030299
- * << [1,2,3,4], 1
- * >> [1,2,4,3]
+  * task: one mutation by a number
+  * << [1,2,3,4], 1
+  * >> [1,2,4,3]
 */
 
 const factorial = (n) => {
@@ -13,7 +14,7 @@ const factorial = (n) => {
   return result;
 };
 
-const get_one_mutation = (array, mutation_number) => {
+export default function get_one_mutation (array, mutation_number) {
   const result = [];
 
   const buffer = array.slice();
@@ -29,4 +30,4 @@ const get_one_mutation = (array, mutation_number) => {
   }
 
   return result.concat(buffer);
-};
+}
