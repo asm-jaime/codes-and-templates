@@ -3,6 +3,6 @@
  * << 67
 */
 
-const random_minmax = (min, max) => (
-  Math.floor(min + Math.random() * (max - min + 1))
-);
+export default function random_minmax (min, max) {
+  return Math.floor(min + Math.random() * (max - min + 1));
+};
