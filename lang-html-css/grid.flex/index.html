@@ -1,0 +1,194 @@
+<!-- #grid
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>pr</title>
+
+<style>
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .container{
+    max-width: 960px;
+    margin: 0 auto;
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-rows: 100px 40px 1fr 100px;
+    grid-template-columns: 150px 1fr 150px;
+    grid-template-areas: "header header header"
+                         "nav nav right"
+                         "left main right"
+                         "footer footer footer";
+  }
+
+  header{
+    grid-area: header;
+    background: grey;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .logo{
+    margin: 24px;
+    font-size: 34px;
+  }
+
+  nav{
+    grid-area: nav;
+
+    background: white;
+
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: 40px;
+  }
+  .menu-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu-item:hover{
+    background: grey;
+  }
+
+  main{
+    grid-area: main;
+    background: white;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .article{
+    text-align: justify;
+    margin: .0em .6em .6em .6em;
+    line-height: 24px;
+  }
+
+  .left{
+    grid-area: left;
+    background: black;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .left-buttons{
+    color: white;
+    margin: 0px;
+    padding: 10px;
+    text-align: right;
+  }
+  .right{
+    grid-area: right;
+    background: black;
+  }
+  footer{
+    grid-area: footer;
+    background: grey;
+  }
+  .footer-text{
+    margin: 0px;
+    padding: 10px;
+    text-align: right;
+  }
+
+  @media screen and (max-width: 960px){
+    .container{
+      grid-template-rows: 100px 1fr 100px;
+      grid-template-columns: auto 1fr 150px;
+      grid-template-areas: "nav header header"
+                           "nav main left"
+                           "nav footer footer";
+    }
+    nav{
+      display: grid;
+      grid-template-columns: 100px;
+      grid-template-rows: repeat(4, 40px);
+
+      padding: 0;
+    }
+    .menu-item{
+      margin: 0px;
+      padding: 10px;
+    }
+
+    .right{
+      display: none;
+    }
+    .left-buttons{
+      text-align: left;
+    }
+  }
+
+  @media screen and (max-width: 768px){
+    .container{
+      grid-template-rows: 100px 1fr 150px;
+      grid-template-columns: auto 1fr;
+      grid-template-areas: "nav header"
+                           "nav main"
+                           "nav footer";
+    }
+    .left{
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 560px){
+    .container{
+      grid-template-rows: auto 1fr auto;
+      grid-template-columns: auto 1fr;
+      grid-template-areas: "nav header"
+                           "nav main"
+                           "nav footer";
+    }
+    .left{
+      display: none;
+    }
+  }
+</style>
+
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">memespr</div>
+      <div></div>
+    </header>
+    <nav>
+      <div class="menu-item">news</div>
+      <div class="menu-item">forum</div>
+      <div class="menu-item">info</div>
+      <div class="menu-item">about</div>
+    </nav>
+    <main class="main">
+      <div class="article">
+      <h4>Structured programming</h4>
+      <p>Structured programming (SP) is a programming paradigm aimed at improving the clarity, quality, and development time of a computer program by making extensive use of the structured control flow constructs of selection (if/then/else) and repetition (while and for), block structures, and subroutines in contrast to using simple tests and jumps such as the go to statement, which can lead to "spaghetti code" that is potentially difficult to follow and maintain.</p>
+      </div>
+      <div class="article">
+      <h4>Object-oriented programming</h4>
+      <p>Object-oriented programming (OOP) is a programming paradigm based on the concept of "objects", which may contain data, in the form of fields, often known as attributes; and code, in the form of procedures, often known as methods. A feature of objects is that an object's procedures can access and often modify the data fields of the object with which they are associated (objects have a notion of "this" or "self"). In OOP, computer programs are designed by making them out of objects that interact with one another. There is significant diversity of OOP languages, but the most popular ones are class-based, meaning that objects are instances of classes, which typically also determine their type.</p>
+      </div>
+    </main>
+    <aside class="left">
+      <div class="left-buttons">paradigms</div>
+      <div class="left-buttons">examples</div>
+      <div class="left-buttons">practics</div>
+      <div class="left-buttons">something</div>
+    </aside>
+    <aside class="right">menu right</aside>
+    <footer>
+      <div class="footer-text">2018, this guy inc.</div>
+    </footer>
+  </div>
+</body>
+</html>
