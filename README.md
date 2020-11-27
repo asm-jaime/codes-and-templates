@@ -1,4 +1,4 @@
-# problems-solved
+# codes-and-templates
   The collection of algorithms, templates and solved problems.
   
 # Can be used as a template library:
