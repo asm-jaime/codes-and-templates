@@ -1,5 +1,6 @@
-/* #codeforceio #contestio #yandexcupio #fileio
+/* #yandexcupio #fileio
  * task: input output(to the file) template contests
+ * links: https://yandex.ru/support/contest/examples-file.html
 */
 
 const readLine = require('readline').createInterface({ input: process.stdin });
@@ -21,5 +22,3 @@ function main() {
     const result = input.join(' ');
     appendFileSync(output, `${result}${NEW_LINE}`);
 }
-
-// solved by: $%U%$
